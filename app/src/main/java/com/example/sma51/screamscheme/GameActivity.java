@@ -125,7 +125,7 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(1);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
                                 wait(2000);
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
@@ -141,7 +141,7 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(3);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
                                 wait(2000);
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
@@ -157,7 +157,7 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(5);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
                                 wait(2000);
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
@@ -173,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(8);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
                                 wait(2000);
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
@@ -189,7 +189,7 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(10);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
                                 wait(2000);
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
@@ -207,7 +207,7 @@ public class GameActivity extends AppCompatActivity {
 				txvResult.setText("You healed for 10 hp!");
 				if(hp >= 100)
 					hp = 100;
-				textHeroHp.setText("hp"); //change to progress bar later
+				textHeroHp.setText("HP: " + hp); //change to progress bar later
 			}
 			else {
 				txvResult.setText("You were already at full hp");
@@ -218,7 +218,7 @@ public class GameActivity extends AppCompatActivity {
                    if(result.get(0).equalsIgnoreCase("bless up")){
                         txvResult.setText("YOU HEALED FOR 50 HP!");   
 			this.hp+=50;
-			textHeroHp.setText(hp");
+			textHeroHp.setText("HP: " + hp);
 		   	//lock this skill unti the next boss appears
                    }
 		}

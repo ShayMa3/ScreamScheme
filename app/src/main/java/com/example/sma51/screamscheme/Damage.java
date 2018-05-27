@@ -27,7 +27,7 @@ public class Damage {
 	}
 
 	public String getName() {
-		return dmg;
+		return name;
 	}
 
 	public void setName(String name) {

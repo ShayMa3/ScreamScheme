@@ -14,7 +14,7 @@ public class Damage {
 		return dmg;
 	}
 
-	public int setDmg(int dmg) {
+	public void setDmg(int dmg) {
 		this.dmg = dmg;
 	}
 
@@ -22,15 +22,15 @@ public class Damage {
 		return dmg;
 	}
 
-	public int setCd(int cd) {
+	public void setCd(int cd) {
 		this.cd = cd;
 	}
 
-	public int getName() {
-		return dmg;
+	public String getName() {
+		return name;
 	}
 
-	public int setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 }

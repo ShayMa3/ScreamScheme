@@ -1,6 +1,6 @@
 package com.example.sma51.screamscheme;
 
-pubic class Boss {
+public class Boss {
 	private int hp, basicAttackCd, specAttackCd, level, dmg;
 	private String name;
 	
@@ -21,6 +21,7 @@ pubic class Boss {
 		if(level == 2) {
 			return 15;
 		}
+		return 0;
 	}
 
 	public void takeDamage(int dmgDealt) {
@@ -44,7 +45,7 @@ pubic class Boss {
 
 	public void setName(String name) {
 		this.name = name;
-	{
+	}
 		
 	public int getHp() {
 		return hp;

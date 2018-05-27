@@ -1,9 +1,16 @@
 package com.example.sma51.screamscheme;
 
 import android.content.Intent;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -62,7 +69,7 @@ public class GameActivity extends AppCompatActivity {
     
     private void displayNames() {
         textHeroName.setText(name);
-        textBossName.setText(boss.getName());
+        textBossName.setText(boss1.getName());
     }
     
     private void displayCooldownBar() {
@@ -73,7 +80,7 @@ public class GameActivity extends AppCompatActivity {
         textPew.setText("Pew - 0");
     }
     
-    private void updateCooldownBar(Damage dmg) {
+    private void updateCooldownBar(Damage dmg) throws InterruptedException {
         if(dmg.getName().equals("slap")) {
             textPoke.setText("Slap - 5");
             wait(5000);
@@ -112,11 +119,11 @@ public class GameActivity extends AppCompatActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+        ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 		switch (requestCode) {
 			case 10:
 			    if (resultCode == RESULT_OK && data != null)
 				{
-					ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 					txvResult.setText(result.get(0));
                    //DAMAGE TRIGGER WORDS
                    //trigger word "poke"
@@ -125,13 +132,21 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(1);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
-                                wait(2000);
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
+                                try {
+                                    wait(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
                         }
                         else {
-                           wait(1000); 
+                           try {
+                               wait(1000);
+                           } catch (InterruptedException e) {
+                               e.printStackTrace();
+                           }
                            txvResult.setText("You are now facing the boss!"); //make boss appear
                        }
                    }
@@ -141,29 +156,45 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(3);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
-                                wait(2000);
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
+                                try {
+                                    wait(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
                         }
                         else {
-                           wait(1000); 
+                           try {
+                               wait(1000);
+                           } catch (InterruptedException e) {
+                               e.printStackTrace();
+                           }
                            txvResult.setText("You are now facing the boss!"); //make boss appear
                        }
                    }
                    //trigger word "punch"
                    if(result.get(0).equalsIgnoreCase("punch")){
-                       txvResult.setText("You did 5 damage!);
+                       txvResult.setText("You did 5 damage!");
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(5);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
-                                wait(2000);
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
+                                try {
+                                    wait(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
                         }
                         else {
-                           wait(1000); 
+                           try {
+                               wait(1000);
+                           } catch (InterruptedException e) {
+                               e.printStackTrace();
+                           }
                            txvResult.setText("You are now facing the boss!"); //make boss appear
                        }
                    }
@@ -173,13 +204,21 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(8);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
-                                wait(2000);
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
+                                try {
+                                    wait(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
                         }
                         else {
-                           wait(1000); 
+                           try {
+                               wait(1000);
+                           } catch (InterruptedException e) {
+                               e.printStackTrace();
+                           }
                            txvResult.setText("You are now facing the boss!"); //make boss appear
                        }
                    }
@@ -189,25 +228,33 @@ public class GameActivity extends AppCompatActivity {
                        if(plebTracker <= 3) {
                             plebSquad.get(plebTracker).takeDamage(10);
                             //make cooldowns and lock skills
-                            if(plebSquad.get(plabTracker).getHp() <= 0) {
-                                wait(2000);
+                            if(plebSquad.get(plebTracker).getHp() <= 0) {
+                                try {
+                                    wait(2000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                                 txvResult.setText("pleb died!"); //show next pleb/boss
                             }
                         }
                         else {
-                           wait(1000); 
+                           try {
+                               wait(1000);
+                           } catch (InterruptedException e) {
+                               e.printStackTrace();
+                           }
                            txvResult.setText("You are now facing the boss!"); //make boss appear
                        }
                    }
                    //HEALTH TRIGGER WORDS
                    //trigger word  "help"
                    if(result.get(0).equalsIgnoreCase("help"));
-		   	if(this.hp < 100) {
-				this.hp+=10;
+		   	if(hero.getHp() < 100) {
+				hero.heal(10);
 				txvResult.setText("You healed for 10 hp!");
-				if(hp >= 100)
-					hp = 100;
-				textHeroHp.setText("hp"); //change to progress bar later
+				if(hero.getHp() >= 100)
+					hero.setHp(100);
+				textHeroHp.setText("HP: " + hero.getHp()); //change to progress bar later
 			}
 			else {
 				txvResult.setText("You were already at full hp");
@@ -217,13 +264,15 @@ public class GameActivity extends AppCompatActivity {
                    //trigger word "bless up"
                    if(result.get(0).equalsIgnoreCase("bless up")){
                         txvResult.setText("YOU HEALED FOR 50 HP!");   
-			this.hp+=50;
-			textHeroHp.setText(hp");
+			hero.heal(50);
+			textHeroHp.setText("HP: " + hero.getHp());
 		   	//lock this skill unti the next boss appears
+                       break;
                    }
 		}
-		break;
+
 		}
+
 	}
 
-}
+

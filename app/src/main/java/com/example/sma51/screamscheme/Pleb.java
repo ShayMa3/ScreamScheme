@@ -14,9 +14,9 @@ public class Pleb {
 
 	public void takeDamage(int dmgDealt) {
 		if(hp >= 0) {
-			if(level == 1) {
+
 				hp-=dmgDealt; //take the hp from the boss in the host activity and decide whether or not the boss is dead
-			}
+
 		}
 		else {
 			hp = 0; //calculate that 0 hp = dead in the actual activity

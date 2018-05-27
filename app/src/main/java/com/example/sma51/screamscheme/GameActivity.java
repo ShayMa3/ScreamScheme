@@ -201,15 +201,28 @@ public class GameActivity extends AppCompatActivity {
                    }
                    //HEALTH TRIGGER WORDS
                    //trigger word  "help"
-                   if(result.get(0).equalsIgnoreCase("help")){
-                       txvResult.setText("You healed for 10 hp!");
+                   if(result.get(0).equalsIgnoreCase("help"));
+		   	if(this.hp < 100) {
+				this.hp+=10;
+				txvResult.setText("You healed for 10 hp!");
+				if(hp >= 100)
+					hp = 100;
+				textHeroHp.setText("hp"); //change to progress bar later
+			}
+			else {
+				txvResult.setText("You were already at full hp");
+			}
+		   	//lock this skill for 30 sec
                    }
                    //trigger word "bless up"
                    if(result.get(0).equalsIgnoreCase("bless up")){
-                       txvResult.setText("YOU HEALED FOR 50 HP!");
+                        txvResult.setText("YOU HEALED FOR 50 HP!");   
+			this.hp+=50;
+			textHeroHp.setText(hp");
+		   	//lock this skill unti the next boss appears
                    }
-				}
-				break;
+		}
+		break;
 		}
 	}
 

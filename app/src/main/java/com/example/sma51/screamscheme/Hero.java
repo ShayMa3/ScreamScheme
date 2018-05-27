@@ -31,4 +31,8 @@ public class Hero {
 	public void heal(int healAmt) {
 		hp+=healAmt;
 	}
+		
+	public int getHp() {
+		return hp;
+	}
 }

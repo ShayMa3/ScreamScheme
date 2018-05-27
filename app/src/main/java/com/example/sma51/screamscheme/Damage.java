@@ -26,11 +26,11 @@ public class Damage {
 		this.cd = cd;
 	}
 
-	public int getName() {
+	public String getName() {
 		return dmg;
 	}
 
-	public int setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 }

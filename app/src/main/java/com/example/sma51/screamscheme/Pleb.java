@@ -26,4 +26,8 @@ public class Pleb {
 	public int getDmg () {
 		return dmg; //the host activity will subtract this from the character's hp
 	}
+	
+	public int getHp() {
+		return hp;
+	}
 }
